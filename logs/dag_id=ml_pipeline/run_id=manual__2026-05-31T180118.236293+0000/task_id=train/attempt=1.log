@@ -1,0 +1,38 @@
+[2026-05-31T18:01:19.278+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-05-31T18:01:19.304+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_pipeline.train manual__2026-05-31T18:01:18.236293+00:00 [queued]>
+[2026-05-31T18:01:19.315+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_pipeline.train manual__2026-05-31T18:01:18.236293+00:00 [queued]>
+[2026-05-31T18:01:19.316+0000] {taskinstance.py:2856} INFO - Starting attempt 1 of 1
+[2026-05-31T18:01:19.354+0000] {taskinstance.py:2879} INFO - Executing <Task(DockerOperator): train> on 2026-05-31 18:01:18.236293+00:00
+[2026-05-31T18:01:19.365+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=195) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-05-31T18:01:19.366+0000] {standard_task_runner.py:72} INFO - Started process 197 to run task
+[2026-05-31T18:01:19.364+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ml_pipeline', 'train', 'manual__2026-05-31T18:01:18.236293+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline.py', '--cfg-path', '/tmp/tmpmu657kwf']
+[2026-05-31T18:01:19.367+0000] {standard_task_runner.py:105} INFO - Job 2: Subtask train
+[2026-05-31T18:01:19.474+0000] {task_command.py:467} INFO - Running <TaskInstance: ml_pipeline.train manual__2026-05-31T18:01:18.236293+00:00 [running]> on host 941a482dd11f
+[2026-05-31T18:01:19.652+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ml_pipeline' AIRFLOW_CTX_TASK_ID='train' AIRFLOW_CTX_EXECUTION_DATE='2026-05-31T18:01:18.236293+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-31T18:01:18.236293+00:00'
+[2026-05-31T18:01:19.653+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2026-05-31T18:01:19.791+0000] {docker.py:367} INFO - Starting docker container from image infrastructure-api:latest
+[2026-05-31T18:01:19.818+0000] {docker.py:375} WARNING - Using remote engine or docker-in-docker and mounting temporary volume from host is not supported. Falling back to `mount_tmp_dir=False` mode. You can set `mount_tmp_dir` parameter to False to disable mounting and remove the warning
+[2026-05-31T18:01:34.664+0000] {docker.py:438} INFO - /usr/local/lib/python3.11/site-packages/mlflow/protos/service_pb2.py:11: UserWarning: google.protobuf.service module is deprecated. RPC implementations should provide code generator plugins which generate code specific to the RPC implementation. service.py will be removed in Jan 2025
+[2026-05-31T18:01:34.665+0000] {docker.py:438} INFO -   from google.protobuf import service as _service
+[2026-05-31T18:01:39.735+0000] {docker.py:438} INFO - 2026/05/31 18:01:39 INFO mlflow.tracking.fluent: Experiment with name 'demand_forecast' does not exist. Creating a new experiment.
+[2026-05-31T18:01:39.882+0000] {docker.py:438} INFO - 2026/05/31 18:01:39 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+[2026-05-31T18:01:39.883+0000] {docker.py:438} INFO - The git executable must be specified in one of the following ways:
+[2026-05-31T18:01:39.884+0000] {docker.py:438} INFO -     - be included in your $PATH
+[2026-05-31T18:01:39.884+0000] {docker.py:438} INFO -     - be set via $GIT_PYTHON_GIT_EXECUTABLE
+[2026-05-31T18:01:39.885+0000] {docker.py:438} INFO -     - explicitly set via git.refresh(<full-path-to-git-executable>)
+[2026-05-31T18:01:39.886+0000] {docker.py:438} INFO - 
+[2026-05-31T18:01:39.886+0000] {docker.py:438} INFO - All git commands will error until this is rectified.
+[2026-05-31T18:01:39.886+0000] {docker.py:438} INFO - 
+[2026-05-31T18:01:39.887+0000] {docker.py:438} INFO - This initial message can be silenced or aggravated in the future by setting the
+[2026-05-31T18:01:39.888+0000] {docker.py:438} INFO - $GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+[2026-05-31T18:01:39.888+0000] {docker.py:438} INFO -     - quiet|q|silence|s|silent|none|n|0: for no message or exception
+[2026-05-31T18:01:39.889+0000] {docker.py:438} INFO -     - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+[2026-05-31T18:01:39.889+0000] {docker.py:438} INFO -     - error|e|exception|raise|r|2: for a raised exception
+[2026-05-31T18:01:39.890+0000] {docker.py:438} INFO - 
+[2026-05-31T18:01:39.891+0000] {docker.py:438} INFO - Example:
+[2026-05-31T18:01:39.891+0000] {docker.py:438} INFO -     export GIT_PYTHON_REFRESH=quiet
+[2026-05-31T18:01:58.022+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-05-31T18:01:58.023+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=ml_pipeline, task_id=train, run_id=manual__2026-05-31T18:01:18.236293+00:00, execution_date=20260531T180118, start_date=20260531T180119, end_date=20260531T180158
+[2026-05-31T18:01:58.245+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-05-31T18:01:58.306+0000] {taskinstance.py:3891} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-05-31T18:01:58.494+0000] {local_task_job_runner.py:240} INFO - ::endgroup::

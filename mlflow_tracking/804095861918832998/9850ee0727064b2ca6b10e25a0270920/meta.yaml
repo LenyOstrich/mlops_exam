@@ -1,0 +1,14 @@
+artifact_uri: file:D:/Projects/mlops_exam/mlflow_tracking/804095861918832998/9850ee0727064b2ca6b10e25a0270920/artifacts
+end_time: 1780235730876
+entry_point_name: ''
+experiment_id: '804095861918832998'
+lifecycle_stage: active
+run_id: 9850ee0727064b2ca6b10e25a0270920
+run_name: bald-horse-50
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780235709576
+status: 3
+tags: []
+user_id: Михаил

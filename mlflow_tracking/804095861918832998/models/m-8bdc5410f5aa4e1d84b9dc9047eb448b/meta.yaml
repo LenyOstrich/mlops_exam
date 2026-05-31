@@ -1,0 +1,10 @@
+artifact_location: file:D:/Projects/mlops_exam/mlflow_tracking/804095861918832998/models/m-8bdc5410f5aa4e1d84b9dc9047eb448b/artifacts
+creation_timestamp: 1780235709900
+experiment_id: '804095861918832998'
+last_updated_timestamp: 1780235730828
+model_id: m-8bdc5410f5aa4e1d84b9dc9047eb448b
+model_type: null
+name: model
+source_run_id: 9850ee0727064b2ca6b10e25a0270920
+status: 2
+status_message: null

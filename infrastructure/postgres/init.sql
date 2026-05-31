@@ -1,0 +1,27 @@
+DO $$
+BEGIN
+    IF NOT EXISTS (SELECT FROM pg_catalog.pg_roles WHERE rolname = 'airflow') THEN
+        CREATE USER airflow WITH PASSWORD 'airflow';
+    END IF;
+
+    IF NOT EXISTS (SELECT FROM pg_catalog.pg_roles WHERE rolname = 'mlflow') THEN
+        CREATE USER mlflow WITH PASSWORD 'mlflow';
+    END IF;
+END
+$$;
+
+CREATE DATABASE airflow WITH OWNER airflow;
+CREATE DATABASE mlflow WITH OWNER mlflow;
+
+GRANT ALL PRIVILEGES ON DATABASE airflow TO airflow;
+GRANT ALL PRIVILEGES ON DATABASE mlflow TO mlflow;
+
+\c airflow
+GRANT ALL ON SCHEMA public TO airflow;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO airflow;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO airflow;
+
+\c mlflow
+GRANT ALL ON SCHEMA public TO mlflow;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO mlflow;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO mlflow;
