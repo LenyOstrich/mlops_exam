@@ -23,10 +23,14 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run training sanity check
-        run: python app/train.py
+        run: python -m app.train
+        env:
+          PYTHONPATH: ${{ github.workspace }}
 
       - name: Run evaluation sanity check
         run: python -c "from app.evaluate import evaluate; print(evaluate())"
+        env:
+          PYTHONPATH: ${{ github.workspace }}
 
   deploy:
     needs: test
